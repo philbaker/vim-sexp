@@ -240,7 +240,6 @@ function! s:sexp_create_mappings()
         imap <silent><buffer> )    <Plug>(sexp_insert_closing_round)
         imap <silent><buffer> ]    <Plug>(sexp_insert_closing_square)
         imap <silent><buffer> }    <Plug>(sexp_insert_closing_curly)
-        imap <silent><buffer> "    <Plug>(sexp_insert_double_quote)
         imap <silent><buffer> <BS> <Plug>(sexp_insert_backspace)
     endif
 endfunction
@@ -426,9 +425,6 @@ inoremap <silent><expr> <Plug>(sexp_insert_opening_curly)  sexp#opening_insertio
 inoremap <silent><expr> <Plug>(sexp_insert_closing_round)  sexp#closing_insertion(')')
 inoremap <silent><expr> <Plug>(sexp_insert_closing_square) sexp#closing_insertion(']')
 inoremap <silent><expr> <Plug>(sexp_insert_closing_curly)  sexp#closing_insertion('}')
-
-" Insert double quote
-inoremap <silent><expr> <Plug>(sexp_insert_double_quote) sexp#quote_insertion('"')
 
 " Delete paired delimiters
 inoremap <silent><expr> <Plug>(sexp_insert_backspace) sexp#backspace_insertion()
